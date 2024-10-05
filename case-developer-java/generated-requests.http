@@ -1,0 +1,12 @@
+###
+GET http://localhost:8080/api/v1/pensiondetails/1
+
+###
+POST http://localhost:8080/api/v1/pensiondetails/recalculate-pension
+Content-Type: application/json
+
+{
+  "participantId": 1,
+  "updatedRetirementAge": 68,
+  "currentPensionValue": 100000.0
+}
