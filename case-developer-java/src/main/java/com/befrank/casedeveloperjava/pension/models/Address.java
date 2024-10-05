@@ -12,4 +12,6 @@ public class Address {
     private String street;
     private Integer number;
     private String city;
+
+    // todo postcode toevoegen
 }
