@@ -1,1 +1,27 @@
+spring:
+  application:
+    name: jpa
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        generate_statistics: true # set this together with 'stat: debug'
+        session:
+          events:
+            log:
+              LOG_QUERIES_SLOWER_THAN_MS: 1
 
+logging:
+  level:
+    org:
+      hibernate:
+        stat: debug # set this together with 'generate_statistics: true'
+        SQL: debug
+        cache: debug
+        engine: debug # info on database connection and commit
+        orm:
+          jdbc:
+            bind: trace
