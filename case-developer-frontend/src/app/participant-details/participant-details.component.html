@@ -1,0 +1,39 @@
+<div *ngIf="participantDetails" class="participant-container">
+  <h2>deelnemer</h2>
+  <div class="details-container">
+    <div class="detail-item">
+      <span class="label">naam</span>
+      <span class="value">{{ participantDetails.name }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">geboortedatum</span>
+      <span class="value">{{ participantDetails.dateOfBirth }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">Email:</span>
+      <span class="value">{{ participantDetails.email }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">maandelijkese premium</span>
+      <span class="value">{{ participantDetails.monthlyPremium }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="label">huidige pensioen</span>
+      <span class="value">{{ participantDetails.currentPensionValue }}</span>
+    </div>
+  </div>
+
+  <h3>Herbereken je pensioen</h3>
+  <div class="recalculate-container">
+    <input type="number" [(ngModel)]="newRetirementAge" placeholder="Nieuwe pensioen leeftijd" />
+    <button (click)="recalculatePension()">Update</button>
+  </div>
+
+  <p *ngIf="hasCorrectRetirementAge && expectedPensionValue">
+    Wanneer je {{ newRetirementAge }} bent, heb je {{ expectedPensionValue }} aan pensioen opgebouwd.
+  </p>
+
+  <p *ngIf="!hasCorrectRetirementAge">
+    Je kan niet in het verleden met pensioen gaan!
+  </p>
+</div>
