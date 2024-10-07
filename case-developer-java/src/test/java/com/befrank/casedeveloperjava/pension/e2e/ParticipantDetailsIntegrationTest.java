@@ -8,6 +8,8 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
+// de e2e (integratie) test moet eigenlijk niet tussen de unit tests, maar even voor het gemak gedaan.
+// Om deze test te laten slagen, moet je natuurlijk eerst de api starten
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 public class ParticipantDetailsIntegrationTest {
 
